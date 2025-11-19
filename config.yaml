@@ -1,0 +1,32 @@
+# Lowest-risk sports market-making config – November 2025
+# Only the absolute highest-volume NFL & NBA markets
+# You can add/remove tickers every week – just copy them straight from the Kalshi app
+
+global:
+  base_order_size: 80
+  max_position_per_market: 250          # very hard cap – keeps drawdowns tiny
+  total_max_position: 1200
+  base_spread_cents: 3                  # 3–4¢ is normal on these markets
+  inventory_skew_factor: 0.7            # super aggressive skew = lowest risk
+  refresh_interval_seconds: 2
+  demo: true                            # will respect KALSHI_USE_DEMO=true above
+
+markets:
+  # NFL Week 12 – highest liquidity markets right now (Nov 19–25 2025)
+  - ticker: NFL-PITvsCLE-25NOV23-MONEYLINE
+  - ticker: NFL-PITvsCLE-25NOV23-SPREAD
+  - ticker: NFL-KCvsCAR-25NOV24-MONEYLINE
+  - ticker: NFL-PHIvsLAR-25NOV24-MONEYLINE
+  - ticker: NFL-BALvsLAC-25NOV25-MONEYLINE   # Monday night – huge volume
+  - ticker: NFL-SFvsGB-25NOV28-MONEYLINE     # Thanksgiving night – massive
+
+  # NBA highest-volume games this week (national TV + big matchups)
+  - ticker: NBA-BOSvsMIA-25NOV20-MONEYLINE
+  - ticker: NBA-LALvsGSW-25NOV22-MONEYLINE
+  - ticker: NBA-DENvsLAL-25NOV23-MONEYLINE
+  - ticker: NBA-OKCvsGSW-25NOV24-MONEYLINE
+
+  # Super Bowl & Conference futures (basically free money – huge depth, tiny moves)
+  - ticker: SB-2026-WINNER
+  - ticker: AFC-2026-WINNER
+  - ticker: NFC-2026-WINNER
